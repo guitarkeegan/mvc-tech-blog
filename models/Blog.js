@@ -17,7 +17,8 @@ Blog.init(
     },
     date: {
       type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW
+      defaultValue: DataTypes.NOW,
+      allowNull: false,
     },
     subtitle: {
       type: DataTypes.STRING,

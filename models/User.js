@@ -20,11 +20,6 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    date: {
-        type: DataTypes.DATE,
-        default: DataTypes.NOW,
-        allowNull: false,
-      },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
