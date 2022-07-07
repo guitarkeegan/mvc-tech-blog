@@ -15,6 +15,10 @@ Blog.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    date: {
+      type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW
+    },
     subtitle: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -37,7 +41,7 @@ Blog.init(
   },
   {
     sequelize,
-    timestamps: true, // add helper function
+    timestamps: false, // add helper function
     freezeTableName: true,
     underscored: true,
     modelName: 'blog'
