@@ -12,14 +12,17 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
+  console.log(`\n--users seeded!--\n`);
 
   const blog = await Blog.bulkCreate(blogSeedData, {
     returning: true
   });
+  console.log(`\n--blogs seeded!--\n`);
 
-  const comment = await Blog.bulkCreate(blogSeedData, {
+  const comment = await Comment.bulkCreate(commentSeedData, {
     returning: true
   });
+  console.log(`\n--comments seeded!--\n`);
 
   process.exit(0);
 };
