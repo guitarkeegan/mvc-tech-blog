@@ -23,13 +23,15 @@
           <a class="nav-link" href="#">Dashboard</a>
         </li>
 {{!-- conditional to login or out --}}
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
-        </li>
-
+{{#if logged_in}}
         <li class="nav-item">
           <a class="nav-link" href="#">Logout</a>
         </li>
+{{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="#">Login</a>
+        </li>
+{{/if}}
 
       </ul>
     </div>
