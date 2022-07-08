@@ -1,12 +1,12 @@
 {{#each blogs as |blog|}}
-<div class="blog-post">
+<div class="blog-post container">
   <div class="post">
-    <div class="img">
+    <div class="img img-fluid">
       <img src={{blog.img}} alt="Decorative Image">
     </div>
     <h2 class="title">{{blog.title}}</h2>
     <h3 class="subtitle">{{blog.subtitle}}</h3>
-    <p class="date-created">{{formatDate blog.date}}</p>
+    <p class="date-created">{{format_date blog.date}}</p>
     <p class="content">{{blog.content}}</p>
   </div>
 </div>
