@@ -5,7 +5,7 @@ const Comment = require('./Comment');
 User.hasMany(Blog, {
     foreignKey: 'user_id'
 });
-// a user can post many commentw
+// a user can post many comments
 User.hasMany(Comment, {
     foreignKey: 'user_id'
 });

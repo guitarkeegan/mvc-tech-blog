@@ -1,4 +1,3 @@
-{{#each blogs as |blog|}}
 <div class="blog-post container">
   <div class="post">
     <div class="img img-fluid">
@@ -9,5 +8,10 @@
     <p class="date-created">{{format_date blog.date}}</p>
     <p class="content">{{blog.content}}</p>
   </div>
+  <div id="comment-container" class="container">
+    <div class="comment">
+        <p>{{blog.comment.content}}</p>
+        <p>{{blog.comment.date}}</p>
+    </div>
+  </div>
 </div>
-{{/each}}
