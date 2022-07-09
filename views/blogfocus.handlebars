@@ -9,9 +9,11 @@
     <p class="content">{{blog.content}}</p>
   </div>
   <div id="comment-container" class="container">
+    {{#each blog.comments as |comment|}}
     <div class="comment">
-        <p>{{blog.comment.content}}</p>
-        <p>{{blog.comment.date}}</p>
+        <p>{{comment.content}}</p>
+        <p>{{comment.date}}</p>
     </div>
+    {{/each}}
   </div>
 </div>
