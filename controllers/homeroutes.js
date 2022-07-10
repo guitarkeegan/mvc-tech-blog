@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Blog, Comment} = require('../models')
+const {Blog, Comment, User} = require('../models')
 
 router.get('/', async (req, res) => {
   try {
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 router.get('/blog/:id', async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
-      include: [{model: Comment, attributes: ['date', 'content']}],
+      include: [{model: Comment, attributes: ['date', 'content']}, {model: User, attributes: ['username']}],
     });
 
     const blog = blogData.get({ plain: true });

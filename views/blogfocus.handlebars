@@ -5,6 +5,7 @@
     </div>
     <h2 class="title">{{blog.title}}</h2>
     <h3 class="subtitle"><a href="/blog/{{blog.id}}">{{blog.subtitle}}</a></h3>
+    <p class="author"> by {{blog.user.username}}</p>
     <p class="date-created">{{format_date blog.date}}</p>
     <p class="content">{{blog.content}}</p>
   </div>
@@ -12,7 +13,7 @@
     {{#each blog.comments as |comment|}}
     <div class="comment">
         <p>{{comment.content}}</p>
-        <p>{{comment.date}}</p>
+        <p>{{format_date comment.date}}</p>
     </div>
     {{/each}}
   </div>

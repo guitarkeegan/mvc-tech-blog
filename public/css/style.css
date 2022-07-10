@@ -2,3 +2,7 @@ img{
     max-width: 600px;
     border: solid black 2px;
 }
+
+.author{
+    font-style: italic;
+}
