@@ -9,7 +9,6 @@ router.get('/', async (req, res) => {
   } catch (err){
     res.json(err);
   }
-  
 });
 
 router.get('/blog/:id', async (req, res) => {
