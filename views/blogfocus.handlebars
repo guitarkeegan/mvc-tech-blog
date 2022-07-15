@@ -12,6 +12,7 @@
   <div id="comment-container" class="container">
     {{#each blog.comments as |comment|}}
     <div class="comment">
+      <p>{{comment.user.username}}</p>
         <p>{{comment.content}}</p>
         <p>{{format_date comment.date}}</p>
     </div>

@@ -16,15 +16,15 @@ router.get('/blog/:id', async (req, res) => {
     const blogData = await Blog.findByPk(req.params.id, {
       include: {
         model: User,
-        attributes: ['username'],
+        attributes: ['username'], 
         model: Comment,
         attributes: ['date', 'content'],
         include:
           {
-             model: User
+             model: User,
+             attributes: ['username'],
            }
       },
-        
     });
     const blog = blogData.get({ plain: true });
     console.log(blog)
