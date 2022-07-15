@@ -16,6 +16,8 @@
         <p>{{format_date comment.date}}</p>
     </div>
     {{/each}}
+    {{#if logged_in}}
   </div>
   {{> addcomment}}
 </div>
+{{/if}}

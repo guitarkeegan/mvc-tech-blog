@@ -14,11 +14,20 @@ router.get('/', async (req, res) => {
 router.get('/blog/:id', async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
-      include: [{model: Comment, attributes: ['date', 'content']}, {model: User, attributes: ['username']}],
+      include: {
+        model: User,
+        attributes: ['username'],
+        model: Comment,
+        attributes: ['date', 'content'],
+        include:
+          {
+             model: User
+           }
+      },
+        
     });
-
     const blog = blogData.get({ plain: true });
-    console.log(blog);
+    console.log(blog)
     res.render('blogfocus', { blog, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
