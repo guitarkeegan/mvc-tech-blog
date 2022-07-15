@@ -14,20 +14,21 @@ router.get('/', async (req, res) => {
 router.get('/blog/:id', async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
-      include: {
-        model: User,
-        attributes: ['username'], 
+      include:[ 
+        User,
+        {
         model: Comment,
         attributes: ['date', 'content'],
-        include:
+        include:[
           {
-             model: User,
-             attributes: ['username'],
-           }
-      },
+            model: User,
+            attributes: ['username'],
+          }
+        ]
+        }
+      ],
     });
     const blog = blogData.get({ plain: true });
-    console.log(blog)
     res.render('blogfocus', { blog, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
@@ -42,6 +43,14 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/signup', (req, res)=>{
+  if (!req.session.loggedIn){
+    res.render('signup');
+  } else {
+    res.redirect('/');
+  }
 });
 
 module.exports = router;

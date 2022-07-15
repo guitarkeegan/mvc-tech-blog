@@ -23,13 +23,16 @@
           <a class="nav-link" href="/">Dashboard</a>
         </li>
 {{!-- conditional to login or out --}}
-{{#if logged_in}}
+{{#if loggedIn}}
         <li class="nav-item">
-          <a id="logout" class="nav-link logout" href="login">Logout</a>
+          <a id="logout" class="nav-link logout" href="/login">Logout</a>
         </li>
 {{else}}
         <li class="nav-item">
-          <a class="nav-link login" href="login">Login</a>
+          <a class="nav-link login" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link signup" href="/signup">Sign Up</a>
         </li>
 {{/if}}
 
@@ -48,7 +51,10 @@
     <script src="js/login.js"></script>
     {{#if logged_in}}
     <script src="js/logout.js"></script>
+    {{else}}
     <script src="js/blogfocus.js"></script>
+    <script src="js/signup.js"></script>
+    <script src="js/login.js"></script>
     {{/if}}
   </body>
 </html>
