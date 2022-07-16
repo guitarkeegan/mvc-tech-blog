@@ -5,7 +5,7 @@ router.get('/', async (req, res) => {
   try {
     const b = await Blog.findAll();
     const blogs = b.map((blog) => blog.get({ plain: true }));
-    res.render('homepage', {blogs, logged_in: req.session.logged_in});
+    res.render('homepage', {blogs, loggedIn: req.session.loggedIn});
   } catch (err){
     res.json(err);
   }
