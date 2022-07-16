@@ -2,7 +2,7 @@ const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
-  console.log('hit post route');
+  console.log('\n--hit comment post route--\n');
     try {
       // create new comment with the information passed in the body. pass the current user_id when creating a new Comment object. 
       const newComment = await Comment.create({

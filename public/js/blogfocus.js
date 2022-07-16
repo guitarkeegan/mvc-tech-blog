@@ -1,8 +1,8 @@
 const commentFormHandler = async (event) => {
     event.preventDefault();
-    console.log(event);
+    
     const comment = document.querySelector('#newComment').value;
-    console.log(comment);
+    
     if (comment) {
       const response = await fetch('/api/comments', {
         method: 'POST',
@@ -22,4 +22,3 @@ const commentFormHandler = async (event) => {
     .querySelector('#comment-form')
     .addEventListener('submit', commentFormHandler);
 
-  alert("js is here!");
