@@ -13,18 +13,22 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/dashboard", withAuth, async (req, res) => {
-  try {
+
     const personalPosts = await Blog.findAll({
       where: {
         user_id: req.session.user_id,
       },
     });
 
+    console.log(personalPosts);
+
     const allBlogs = personalPosts.map((post) => post.get({ plain: true }));
-    res.render("dashboard", { allBlogs, loggedIn });
-  } catch (err) {
-    res.status(400).json("No posts were found.");
-  }
+    res.render("dashboard", { allBlogs, loggedIn: req.session.loggedIn });
+  } 
+);
+
+router.get("/create-post", withAuth, async (req, res)=>{
+  res.render('createpost', {loggedIn: req.session.loggedIn});
 });
 
 router.get("/blog/:id", async (req, res) => {

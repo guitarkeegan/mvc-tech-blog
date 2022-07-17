@@ -3,34 +3,45 @@
 </div>
 
 <div class="container">
-  <form class="form-floating">
-    
-    <input
-      type="text"
-      class="form-control"
-      id="post-title"
-      placeholder="ex. The link between music and code"
-    />
-    <label>Title</label>
-    <input
-      type="text"
-      class="form-control"
-      id="post-subtitle"
-      placeholder="She knows the answer"
-    />
-    <label>Sub-Title</label>
-
-    <div class="form-floating">
+  <form class="form-floating new-post-form">
+    <div class="form-floating mb-3 col-3">
+      <input
+        type="text"
+        class="form-control"
+        id="post-title"
+      />
+      <label for="post-title">Title</label>
+    </div>
+    <div class="form-floating mb-3 col-3">
+      <input
+        type="text"
+        class="form-control"
+        id="post-subtitle"
+      />
+      <label for="post-subtitle">Sub-Title</label>
+    </div>
+    <div class="form-floating mb-3 col-3">
+      <input
+        type="text"
+        class="form-control"
+        id="post-img"
+      />
+      <label for="post-title">Image URL</label>
+    </div>
+    <div class="form-floating mb-3">
       <textarea
         class="form-control"
-        placeholder="Write post here"
         id="post-content"
-        style="height: 100px"
+        style="height: 200px"
       ></textarea>
       <label>Post</label>
     </div>
 
-    <button id="post-submit" type="submit" class="btn btn-primary">Submit</button>
+    <button
+      id="post-submit"
+      type="submit"
+      class="btn btn-primary"
+    >Create Post</button>
 
   </form>
 </div>

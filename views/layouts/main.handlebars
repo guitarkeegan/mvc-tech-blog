@@ -20,7 +20,7 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/">Dashboard</a>
+          <a class="nav-link" href="/dashboard">Dashboard</a>
         </li>
 {{!-- conditional to login or out --}}
 {{#if loggedIn}}
@@ -50,6 +50,7 @@
     <script src="/js/blogfocus.js"></script>
     {{#if loggedIn}}
     <script src="/js/logout.js"></script>
+    <script src="/js/dashboard.js"></script>
     {{else}}
     <script src="/js/signup.js"></script>
     <script src="/js/login.js"></script>
