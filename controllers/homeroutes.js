@@ -31,6 +31,17 @@ router.get("/create-post", withAuth, async (req, res)=>{
   res.render('createpost', {loggedIn: req.session.loggedIn});
 });
 
+router.get("/edit-post/:id", withAuth, async (req, res)=>{
+
+  try {
+    const postData = await Blog.findByPk(req.params.id);
+    const post = postData.get({plain: true});
+    res.render('editpost', {loggedIn: req.session.loggedIn, post})
+  } catch (err){
+    res.status(400).json(err);
+  }
+})
+
 router.get("/blog/:id", async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {

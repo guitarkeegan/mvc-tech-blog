@@ -1,0 +1,50 @@
+<div class="container text-center">
+  <h1>Edit Post</h1>
+</div>
+
+<div class="container">
+  <form class="form-floating edit-post-form">
+    <div class="form-floating mb-3 col-3">
+      <input
+        type="text"
+        class="form-control"
+        id="post-title"
+        value="{{post.title}}"
+      />
+      <label for="post-title">Title</label>
+    </div>
+    <div class="form-floating mb-3 col-3">
+      <input
+        type="text"
+        class="form-control"
+        id="post-subtitle"
+        value="{{post.subtitle}}"
+      />
+      <label for="post-subtitle">Sub-Title</label>
+    </div>
+    <div class="form-floating mb-3 col-3">
+      <input
+        type="text"
+        class="form-control"
+        id="post-img"
+        value="{{post.img}}"
+      />
+      <label for="post-title">Image URL</label>
+    </div>
+    <div class="form-floating mb-3">
+      <textarea
+        class="form-control"
+        id="post-content"
+        style="height: 200px"
+      >{{post.content}}</textarea>
+      <label>Post</label>
+    </div>
+
+    <button
+      id="post-submit"
+      type="submit"
+      class="btn btn-primary"
+    >Update Post</button>
+
+  </form>
+</div>

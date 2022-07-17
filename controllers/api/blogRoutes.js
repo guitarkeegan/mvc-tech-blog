@@ -14,4 +14,18 @@ router.post("/", withAuth, async (req, res)=>{
     }
 });
 
+router.put("/edit/:id", withAuth, async (req, res)=>{
+    const blog_id = req.params.id;
+    const updatedBlog = await Blog.update({
+        title: req.body.title,
+        subtitle: req.body.subtitle,
+        img: req.body.img,
+        content: req.body.content,
+    }, 
+    {where: {id: blog_id}}
+    );
+    res.status(200).json(updatedBlog)
+
+})
+
 module.exports = router;

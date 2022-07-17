@@ -1,4 +1,4 @@
-async function createPost(e){
+async function editPost(e){
     e.preventDefault();
     const title = document.querySelector('#post-title').value.trim();
     const subTitle = document.querySelector('#post-subtitle').value.trim();
@@ -6,8 +6,12 @@ async function createPost(e){
     const post = document.querySelector('#post-content').value;
 
     try {
-        const response = await fetch('/api/blogs', {
-            method: 'POST',
+        const currentURL = window.location.href;
+        const urlArr = currentURL.split("/");
+        const blog_id = urlArr[urlArr.length - 1]
+
+        const response = await fetch(`/api/blogs/edit/${blog_id}`, {
+            method: 'PUT',
             body: JSON.stringify({ title: title, subtitle: subTitle, img: imgUrl, content: post}),
             headers: { 'Content-Type': 'application/json' },
           });
@@ -22,5 +26,5 @@ async function createPost(e){
 
 }
 
-document.querySelector('.new-post-form').addEventListener("submit", createPost);
+document.querySelector('.edit-post-form').addEventListener("submit", editPost);
 
