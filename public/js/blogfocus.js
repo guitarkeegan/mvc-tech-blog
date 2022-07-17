@@ -15,12 +15,6 @@ const commentFormHandler = async (event) => {
       });
       console.log(response);
       if (response.ok) {
-        // let url = response.url.split("/")
-        //     if (url[url.length - 1] === blog_id) {
-        //       document.location.replace(`/blog/${blog_id}`);
-        //     } else {
-        //       document.location.replace(`/`);
-        //     }
         location.reload();
       } else {
           alert('Failed to post comment.');

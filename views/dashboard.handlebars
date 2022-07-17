@@ -1,0 +1,18 @@
+<div>
+    <h1>Your Posts</h1>
+</div>
+<div>
+    <h2 class="create-new-post"><a href="/create-post">Create a new post</a></h2>
+</div>
+{{#each allBlogs as |blog|}}
+<div class="blog-post container">
+  <div class="post">
+    <div class="img img-fluid">
+      <img src={{blog.img}} alt="Decorative Image">
+    </div>
+    <h2 class="title">{{blog.title}}</h2>
+    <h3 class="subtitle"><a href="/blog/{{blog.id}}">{{blog.subtitle}}</a></h3>
+    <p class="date-created">{{format_date blog.date}}</p>
+  </div>
+</div>
+{{/each}}
