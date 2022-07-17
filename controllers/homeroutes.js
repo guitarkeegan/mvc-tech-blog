@@ -20,8 +20,6 @@ router.get("/dashboard", withAuth, async (req, res) => {
       },
     });
 
-    console.log(personalPosts);
-
     const allBlogs = personalPosts.map((post) => post.get({ plain: true }));
     res.render("dashboard", { allBlogs, loggedIn: req.session.loggedIn });
   } 

@@ -23,8 +23,10 @@ async function editPost(e){
     } catch (err){
         alert(err);
     }
-
 }
 
+
+
 document.querySelector('.edit-post-form').addEventListener("submit", editPost);
+
 

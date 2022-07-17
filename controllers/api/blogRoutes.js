@@ -14,7 +14,7 @@ router.post("/", withAuth, async (req, res)=>{
     }
 });
 
-router.put("/edit/:id", withAuth, async (req, res)=>{
+router.put("/:id", withAuth, async (req, res)=>{
     const blog_id = req.params.id;
     const updatedBlog = await Blog.update({
         title: req.body.title,
@@ -25,7 +25,18 @@ router.put("/edit/:id", withAuth, async (req, res)=>{
     {where: {id: blog_id}}
     );
     res.status(200).json(updatedBlog)
+});
 
+router.delete("/:id", withAuth, async (req, res)=>{
+    const blog_id = req.params.id;
+    try {
+        const deleteBlog = await Blog.delete({
+            where: {id: req.params.id}
+        });
+        res.status(200).json(deleteBlog);
+    } catch (err){
+        res.status(400).json(err);
+    }
 })
 
 module.exports = router;

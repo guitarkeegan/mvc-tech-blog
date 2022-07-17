@@ -22,5 +22,14 @@ async function createPost(e){
 
 }
 
+async function deletePost(e){
+    e.preventDefault();
+    console.log(e.target);
+    console.log(this);
+    // const response = await fetch(`/api/blogs/${blog_id}`)
+
+}
+
 document.querySelector('.new-post-form').addEventListener("submit", createPost);
 
+document.querySelector('.delete-post').addEventListener("click", deletePost);
