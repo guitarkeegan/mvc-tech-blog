@@ -6,3 +6,7 @@ img{
 .author{
     font-style: italic;
 }
+
+textarea{
+    text-indent: 0%;
+}

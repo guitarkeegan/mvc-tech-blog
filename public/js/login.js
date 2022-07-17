@@ -23,3 +23,4 @@ document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
   
+console.log("at login page");

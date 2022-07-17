@@ -1,22 +1,34 @@
 const commentFormHandler = async (event) => {
+
     event.preventDefault();
+    const currentURL =  window.location.href;
+    const urlArr = currentURL.split("/");
+    const blog_id = parseInt(urlArr[urlArr.length - 1]);
     
     const comment = document.querySelector('#newComment').value;
-    
-    if (comment) {
+
+    try {
       const response = await fetch('/api/comments', {
         method: 'POST',
-        body: JSON.stringify({ comment }),
+        body: JSON.stringify({ content: comment, blog_id: blog_id }),
         headers: { 'Content-Type': 'application/json' },
       });
-  
+      console.log(response);
       if (response.ok) {
-        document.location.reload();
+        // let url = response.url.split("/")
+        //     if (url[url.length - 1] === blog_id) {
+        //       document.location.replace(`/blog/${blog_id}`);
+        //     } else {
+        //       document.location.replace(`/`);
+        //     }
+        location.reload();
       } else {
-        alert('Failed to log in');
-      }
-    }
-  };
+          alert('Failed to post comment.');
+          }
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+      }};
   
   document
     .querySelector('#comment-form')
