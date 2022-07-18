@@ -1,10 +1,12 @@
 const router = require("express").Router();
 const { Blog, Comment, User } = require("../models");
 const withAuth = require("../utils/auth");
-
+// homepage will render all posts
 router.get("/", async (req, res) => {
   try {
-    const b = await Blog.findAll();
+    const b = await Blog.findAll({order: [
+      ['id', 'DESC'],
+  ],});
     const blogs = b.map((blog) => blog.get({ plain: true }));
     res.render("homepage", { blogs, loggedIn: req.session.loggedIn });
   } catch (err) {
