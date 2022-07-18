@@ -1,12 +1,19 @@
-img{
-    max-width: 600px;
-    border: solid black 2px;
+img {
+  max-width: 600px;
+  border: solid black 2px;
 }
 
-.author{
-    font-style: italic;
+.author {
+  font-style: italic;
 }
 
-textarea{
-    text-indent: 0%;
+textarea {
+  text-indent: 0%;
+}
+
+.short-content {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
 }
