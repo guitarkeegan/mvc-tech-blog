@@ -23,13 +23,31 @@ async function createPost(e){
 }
 
 async function deletePost(e){
+    
     e.preventDefault();
-    console.log(e.target);
-    console.log(this);
-    // const response = await fetch(`/api/blogs/${blog_id}`)
-
+    console.log(this.id)
+    const blog_id = this.id;
+    try {
+      const response = await fetch(`/api/blogs/${blog_id}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+          });
+      if (response.ok){
+        location.reload();
+        return;
+      } else {
+        alert(response.status)
+      }
+    } catch (err) {
+      alert(err);
+    }
 }
 
-document.querySelector('.new-post-form').addEventListener("submit", createPost);
+const buttonArrEl = document.querySelectorAll(".delete-post");
 
-document.querySelector('.delete-post').addEventListener("click", deletePost);
+buttonArrEl.forEach((button)=>{
+  button.addEventListener("click", deletePost);
+});
+
+document.querySelector(".new-post-form").addEventListener("submit", createPost);
+

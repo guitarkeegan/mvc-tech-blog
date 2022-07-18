@@ -10,7 +10,7 @@ async function editPost(e){
         const urlArr = currentURL.split("/");
         const blog_id = urlArr[urlArr.length - 1]
 
-        const response = await fetch(`/api/blogs/edit/${blog_id}`, {
+        const response = await fetch(`/api/blogs/${blog_id}`, {
             method: 'PUT',
             body: JSON.stringify({ title: title, subtitle: subTitle, img: imgUrl, content: post}),
             headers: { 'Content-Type': 'application/json' },

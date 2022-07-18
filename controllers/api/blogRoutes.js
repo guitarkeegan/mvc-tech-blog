@@ -28,10 +28,12 @@ router.put("/:id", withAuth, async (req, res)=>{
 });
 
 router.delete("/:id", withAuth, async (req, res)=>{
-    const blog_id = req.params.id;
+    
+    const blog_id = parseInt(req.params.id);
+    console.log(blog_id);
     try {
-        const deleteBlog = await Blog.delete({
-            where: {id: req.params.id}
+        const deleteBlog = await Blog.destroy({
+            where: {id: blog_id}
         });
         res.status(200).json(deleteBlog);
     } catch (err){
