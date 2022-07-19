@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const {Blog} = require('../../models');
 const withAuth = require('../../utils/auth');
-
+// if authorized, users can create a post with this route.
 router.post("/", withAuth, async (req, res)=>{
     try {
         const newPost = await Blog.create({
@@ -13,7 +13,7 @@ router.post("/", withAuth, async (req, res)=>{
         res.status(400).json(err);
     }
 });
-
+//if authenticated, users can update one of their previous posts with this PUT route.
 router.put("/:id", withAuth, async (req, res)=>{
     const blog_id = req.params.id;
     const updatedBlog = await Blog.update({
@@ -26,7 +26,7 @@ router.put("/:id", withAuth, async (req, res)=>{
     );
     res.status(200).json(updatedBlog)
 });
-
+//Authenticated users can delete a post that shows up on their dashboard.
 router.delete("/:id", withAuth, async (req, res)=>{
     
     const blog_id = parseInt(req.params.id);

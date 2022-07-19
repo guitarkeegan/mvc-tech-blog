@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Login
+// Login. User can login if they already have an email and password.
 router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
@@ -61,7 +61,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Logout
+// Logout. This will log the user out.
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 const {Comment} = require('../../models')
-
+// Authenticated users can create a comment on any blog post. The username, date, and post content will be displayed below the blog post.
 router.post('/', withAuth, async (req, res) => {
   console.log('\n--hit comment post route--\n');
     try {

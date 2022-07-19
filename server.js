@@ -17,6 +17,7 @@ const hbs = exphbs.create({ helpers });
 const sess = {
   secret: process.env.SESSION_SECRET,
   cookie: {
+    // Set the max age of this cookie to 30 minutes.
     maxAge: 1000 * 60 * 30
   },
   resave: false,
