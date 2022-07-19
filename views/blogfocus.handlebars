@@ -1,3 +1,4 @@
+{{!-- This page will display all of the related date to a specific post. If logged in, users can also post a comment. --}}
 <div class="blog-post container">
   <div class="post">
     <div class="img img-fluid">
@@ -16,6 +17,7 @@
         <p>said: {{comment.content}}</p>
         <p>posted: {{format_date comment.date}}</p>
     </div>
+    {{!-- if logged in, users will see the form to add a comment --}}
     {{/each}}
     {{#if loggedIn}}
   </div>
