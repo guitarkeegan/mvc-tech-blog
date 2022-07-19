@@ -4,7 +4,7 @@ async function createPost(e){
     const subTitle = document.querySelector('#post-subtitle').value.trim();
     const imgUrl = document.querySelector('#post-img').value.trim();
     const post = document.querySelector('#post-content').value;
-
+    // Here, user can post a post request to create a new blog post
     try {
         const response = await fetch('/api/blogs', {
             method: 'POST',
@@ -21,7 +21,7 @@ async function createPost(e){
     }
 
 }
-
+// Function will call the delete route at the matching blog_id
 async function deletePost(e){
     
     e.preventDefault();

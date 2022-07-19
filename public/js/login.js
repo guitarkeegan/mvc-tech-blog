@@ -3,14 +3,14 @@ const loginFormHandler = async (event) => {
   
     const email = document.querySelector('#email-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
-  
+  // send a POST request if user suppled and email and password
     if (email && password) {
       const response = await fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
-  
+  // after logging in, send user back to the homepage
       if (response.ok) {
         document.location.replace('/');
       } else {
@@ -23,4 +23,3 @@ document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
   
-console.log("at login page");

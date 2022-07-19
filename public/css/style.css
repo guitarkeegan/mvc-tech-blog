@@ -10,7 +10,7 @@ img {
 textarea {
   text-indent: 0%;
 }
-
+/* Make the content of each blogpost truncated to just a few words, followed by and ellipsis */
 .short-content {
   white-space: nowrap;
   overflow: hidden;
