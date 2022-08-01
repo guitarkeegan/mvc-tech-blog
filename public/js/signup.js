@@ -24,4 +24,3 @@ const signupFormHandler = async (event) => {
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
 
-console.log("at signup page");
