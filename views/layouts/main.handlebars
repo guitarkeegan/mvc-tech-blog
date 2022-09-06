@@ -4,6 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Musical Code</title>
 
+    {{!-- google fonts --}}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,100&display=swap" rel="stylesheet">
+
     {{!-- bootstrap --}}
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -56,11 +62,8 @@
         </div>
       </nav>
     </header>
-    <div>
-      <h1 class="text-center">Musical Code</h1>
-    </div>
     {{!-- Other handlebars will be directed here. --}}
-    <main>
+    <main class="container-fluid text-center pt-4">
       {{{body}}}
     </main>
     {{!-- bootsrap script --}}
