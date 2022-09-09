@@ -44,3 +44,18 @@ textarea {
   max-width: 200px;
 }
 
+.login-img {
+  max-width: 600px;
+}
+
+@media screen and (max-width: 670px){
+  .login-img{
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .login-img{
+    max-width: 80vw;
+  }
+}
